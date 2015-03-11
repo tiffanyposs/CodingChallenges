@@ -58,16 +58,14 @@ var FindLargestProduct = function(){
 	while(x + 4 <= twenty_array.length){
 		while(i <= twenty_array[x].length - 4){
 		var one = twenty_array[x][i]
-		var two = twenty_array[(x+1)][(i+1)]
-		var three = twenty_array[(x+2)][(i+2)]
-		var four = twenty_array[(x+3)][(i+3)]
+		var two = twenty_array[x+1][i+1]
+		var three = twenty_array[x+2][i+2]
+		var four = twenty_array[x+3][i+3]
 		// console.log(one + " " + two + " " + three + " " + four)
 		var total = one + two + three + four;
-		if(total > largest_num){
-			largest_num = total;
-			// console.log(largest_num)
-		}
-		// console.log(twenty_array[x+3])
+			if(total > largest_num){
+				largest_num = total;
+			}
 		i++	
 		}
 		x++;
