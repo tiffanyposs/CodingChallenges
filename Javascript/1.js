@@ -1,17 +1,18 @@
-var num_array = [];
-
-var number = 1;
-
-while(number <= 100){
-	if(number % 3 === 0 || number % 5 === 0){
-		num_array.push(number);	
+var multipleThreeFive = function(num){
+	if(num % 3 == 0 || num % 5 == 0){
+		return true
 	}
-	number++;
+	return false
 }
 
-var total = 0;
+var sumOfFactor = function(upTil){
+	var total = 0;
+	for(var i = 1; i < upTil; i++){
+		if(multipleThreeFive(i)){
+			total+=i;
+		}
+	}
+	return total
+}
 
-num_array.forEach(function(each){
-	total += each;
-	console.log(total)
-})
+sumOfFactor(1000)

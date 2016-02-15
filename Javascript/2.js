@@ -1,22 +1,24 @@
-var array = [1, 2]
-
-var x = 0;
-var y = 1;
-
-while(array[x] + array[y] <= 100){
-	var new_num = array[x] + array[y];
-	if(new_num <= 100){
-		array.push(new_num)
-		x++;
-		y++;
+var findFibonacci = function(max){
+	var sequence = [1, 2];
+	while(true){
+		var sum = sequence[sequence.length - 2] + sequence[sequence.length - 1];
+		if(sum < max){
+			sequence.push(sum);
+		}else{
+			break
+		}
 	}
+	return sequence
 }
 
-array.forEach(function(each){
-	if(each % 2 != 0){
-		var index = array.indexOf(each);
-		array.splice(array[index], 1)
-	}
-})
+var findEvenSum = function(nums){
+	var total = 0;
+	nums.forEach(function(num){
+		if(num % 2 === 0){
+			total+=num
+		}
+	});
+	return total
+}
 
-console.log(array)
+findEvenSum(findFibonacci(4000000))

@@ -1,40 +1,68 @@
-//finds if a number is prime or not
-var IsPrime = function(number){
-	var counter = 2;
-	var prime = true
-	while(counter < number){
-		var remainder = number % counter;
-		if(remainder === 0){
-			prime = false
+var isPrime = function(num){
+	for(var i = 2; i < num - 1; i++){
+		if(num % i == 0){
+			return false
+		}
+	}
+	return true
+}
+
+var findPrimeAtIndex = function(num){
+	var index = 0,
+		counter = 2,
+	    highest;
+	while(index <= num){
+		if(isPrime(counter)){
+			highest = counter;
+			index++;
 		}
 		counter++;
-	}
-	if(prime === true){
-		return true
-	}
-	else{
-		return false
-	}
-
-}
-
-
-var FindNumber = function(){
-	var prime_counter = 1;
-	var counter = 2
-	while(prime_counter < 10001){
-		var answer = IsPrime(counter);
-		if(answer === true){
-			console.log( prime_counter + " " + counter)
-			prime_counter++;
-			counter++;
-		}
-		else{
-			counter++;
+		if(index === num){
+			return highest
 		}
 	}
-	console.log(counter + " is the " + prime_counter + "th prime number")
 }
 
+console.log(findPrimeAtIndex(5))
 
-FindNumber();
+
+// //finds if a number is prime or not
+// var IsPrime = function(number){
+// 	var counter = 2;
+// 	var prime = true
+// 	while(counter < number){
+// 		var remainder = number % counter;
+// 		if(remainder === 0){
+// 			prime = false
+// 		}
+// 		counter++;
+// 	}
+// 	if(prime === true){
+// 		return true
+// 	}
+// 	else{
+// 		return false
+// 	}
+
+// }
+
+
+// var FindNumber = function(){
+// 	var prime_counter = 1;
+// 	var counter = 2
+// 	while(prime_counter < 10001){
+// 		var answer = IsPrime(counter);
+// 		if(answer === true){
+// 			console.log( prime_counter + " " + counter)
+// 			prime_counter++;
+// 			counter++;
+// 		}
+// 		else{
+// 			counter++;
+// 		}
+// 	}
+// 	console.log(counter + " is the " + prime_counter + "th prime number")
+// }
+
+
+// FindNumber();
