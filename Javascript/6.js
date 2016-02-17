@@ -9,9 +9,6 @@ var findDifference = function(){
 	}
 	after = after*after;
 	var sum = after - before;
-	console.log(before);
-	console.log(after);
-	console.log("answer: " + sum);
 	return sum;
 }
 
